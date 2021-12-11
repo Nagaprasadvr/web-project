@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+    <title>Covid-19 Survey Form</title>
+    <link rel="icon" href="https://i.imgur.com/Kn8ly4o.png">
+    <link rel="stylesheet" type="text/css" href="./blooddonor.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="container">
+<body>
+<!-- The code focusing on the navigation bar and image STARTS here-->
+
+   <script>
+       function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    }else{
+        x.className = "topnav";
+    }
+}
+   </script>
+
+    <h1 id="title" >Covid-19 Blood donor</h1>
+    <p id="description" ></p>
+
+    <div id="body">
+    <form id="survey-form" class="parent">
+        <h2>Demographic Information</h2>
+        <label id="name-label" for="name">
+        <p>First Name(s):</p>
+        </label>
+        <input id="FirstName" type="text" placeholder="Enter your first name" required>
+
+        <label id="name-label" for="name">
+        <p>Last Name:</p>
+        </label>
+        <input id="LastName" type="text" placeholder="Enter your last name" required>
+
+        <label id="email-label" for="email">
+        <p>Email:</p>
+        </label>
+        <input id="email" type="text" placeholder="example@example.co.za" required>
+         <p>Address:</p>
+        </label>
+        <input id="LastName" type="text" placeholder="Enter yor Address" required>
+        <p>Hospital:</p>
+        </label>
+        <input id="LastName" type="text" placeholder="Enter hospital details" required>
+<label id="number-label" for="number">
+        <p>Date:<span class="clue"></span></p>
+        </label>
+        <input type="number" name="" id="number" min="1000" max="9999" placeholder="Date"></input>
+        </label>
+         <p>Time:<span class="clue"></span></p>
+        </label>
+        <input type="number" name="" id="number" min="1000" max="9999" placeholder="Time"></input>
+        </label>
+        <button type="submit" id="submit" class="submit-button">Submit</button>
+    </form>
+    </div>
+</body>
+</div>
+
+
+</body>
+</html>
