@@ -46,7 +46,7 @@ class Signup:
                     cursor.execute("INSERT INTO USER_SIGNUP VALUES(%s, %s, %s, %s);", (self.name, self.email, self.password))
 
         except:
-            pass
+            print("error")
 
 class Oxygen:
     name = ""
@@ -87,10 +87,18 @@ class Medicines:
             with connection:
                 with connection.cursor() as cursor:
                     cursor.execute(
-                        "CREATE TABLE MEDICINE(MEDICINENAME VARCHAR(20), ADDRESS VARCHAR(50), PHONE_NUM VARCHAR(20), QUANTITY VARCHAR(5) )")
+                        "CREATE TABLE MEDICINE(MEDICINENAME VARCHAR(20), ADDRESS VARCHAR(50), PHONE_NUM VARCHAR(20), QUANTITY VARCHAR(5));")
                 with connection.cursor() as cursor:
-                    cursor.execute("INSERT INTO OXYGEN VALUES(%s, %s, %s, %s);", (self.name, self.address, self.phone_no, self.quant))
+                    cursor.execute("INSERT INTO MEDICINE VALUES(%s, %s, %s, %s);", (self.name, self.address, self.phone_no, self.quant))
 
         except:
             pass
+
+def fetch():
+        connection = psycopg2.connect(sqlURl)
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM USER_SIGNUP;")
+                values = cursor.fetchall()
+                print(values)
 

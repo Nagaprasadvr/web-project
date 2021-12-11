@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request , flash
-from . models import Blood, Signup
+from . models import Blood, Signup, fetch
 
 #from werkzeug.serving import generate_password
 auth = Blueprint('auth', __name__)
@@ -30,6 +30,7 @@ def sign_up():
             flash('password length must be greater than 7 characters', category='error')
         else:
             Signup(firstName,password2,email)
+            fetch()
             flash('Account created' , category = 'success')
 
     return render_template("signup.html")
