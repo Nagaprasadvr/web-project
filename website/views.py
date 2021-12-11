@@ -39,3 +39,6 @@ def bed():
 @views.route('/oxygen')
 def oxygen():
     return render_template("Oxygencylinder.html")
+@views.route('/covidlive')
+def live():
+    return render_template("covidlivetracking.html")
