@@ -64,11 +64,33 @@ class Oxygen:
             with connection:
                 with connection.cursor() as cursor:
                     cursor.execute(
-                        "CREATE TABLE OXYGENN(NAME VARCHAR(20), ADDRESS VARCHAR(50), PHONE_NUM VARCHAR(20), NUMBER VARCHAR(5) )")
+                        "CREATE TABLE OXYGEN(NAME VARCHAR(20), ADDRESS VARCHAR(50), PHONE_NUM VARCHAR(20), NUMBER VARCHAR(5) )")
                 with connection.cursor() as cursor:
-                    cursor.execute("INSERT INTO BLOOD VALUES(%s, %s, %s, %s);", (self.name, self.address, self.phone_no, self.number))
+                    cursor.execute("INSERT INTO OXYGEN VALUES(%s, %s, %s, %s);", (self.name, self.address, self.phone_no, self.number))
 
         except:
             pass
 
+class Medicines:
+    name = ""
+    quant = ""
+    address = ""
+    phone_no = ""
+
+    def __init__(self,n,num,a,ph):
+        self.name=n
+        self.address = a
+        self.quant = num
+        self.phone_no = ph
+        connection = psycopg2.connect(sqlURl)
+        try:
+            with connection:
+                with connection.cursor() as cursor:
+                    cursor.execute(
+                        "CREATE TABLE MEDICINE(MEDICINENAME VARCHAR(20), ADDRESS VARCHAR(50), PHONE_NUM VARCHAR(20), QUANTITY VARCHAR(5) )")
+                with connection.cursor() as cursor:
+                    cursor.execute("INSERT INTO OXYGEN VALUES(%s, %s, %s, %s);", (self.name, self.address, self.phone_no, self.quant))
+
+        except:
+            pass
 
