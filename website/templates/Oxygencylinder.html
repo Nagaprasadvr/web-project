@@ -1,52 +1,67 @@
-{% extends "base2.html" %} {% block title %}Donate{% endblock %} {% block
-content %}
-<form method="POST">
-  <h3 align="center">Sign Up</h3>
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input
-      type="name"
-      class="form-control"
-      id="name"
-      name="name"
-      placeholder="Name of donor"
-    />
-  </div>
-<div class="form-group">
-    <label for="phonenumber">Phonenumber</label>
-    <input
-      type="phonenumber"
-      class="form-control"
-      id="phonenumber"
-      name="phonenumber"
-      placeholder="Enter Phone number"
-    />
-  </div>
-<div class="form-group">
-    <label for="address">Address</label>
-    <input
-      type="address"
-      class="form-control"
-      id="address"
-      name="address"
-      placeholder="Enter Address where donor is present"
-    />
-  </div>
-  <div class="form-group">
-    <label for="hosp">Hosp</label>
-    <input
-      type="hosp"
-      class="form-control"
-      id="hosp"
-      name="hosp"
-      placeholder="Enter Hospital branch"
-    />
-  </div>
-  
-  <br />
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<br>
-<br>
-<button class ="btn" ><a href="/home">HOME</a></button>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+    <title>Covid-19 Health Care</title>
+    <link rel="icon" href="https://i.imgur.com/Kn8ly4o.png">
+    <link rel="stylesheet" type="text/css" href="./blooddonor.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="container">
+<body>
+<!-- The code focusing on the navigation bar and image STARTS here-->
+
+   <script>
+       function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    }else{
+        x.className = "topnav";
+    }
+}
+   </script>
+
+    <h1 id="title" >Covid-19 Blood donor</h1>
+    <p id="description" ></p>
+
+    <div id="body">
+    <form id="survey-form" class="parent">
+        <h2>Demographic Information</h2>
+        <label id="name-label" for="name">
+        <p>First Name(s):</p>
+        </label>
+        <input id="FirstName" type="text" placeholder="Enter your first name" required>
+
+        <label id="name-label" for="name">
+        <p>Last Name:</p>
+        </label>
+        <input id="LastName" type="text" placeholder="Enter your last name" required>
+
+        <label id="email-label" for="email">
+        <p>Email:</p>
+        </label>
+        <input id="email" type="text" placeholder="example@example.co.za" required>
+         <p>Address:</p>
+        </label>
+        <input id="LastName" type="text" placeholder="Enter yor Address" required>
+        <p>Hospital:</p>
+        </label>
+        <input id="LastName" type="text" placeholder="Enter hospital details" required>
+<label id="number-label" for="number">
+        <button type="submit" id="submit" class="submit-button">Submit</button>
+    </form>
+    </div>
+</body>
+</div>
+
+
+</body>
+</html>
