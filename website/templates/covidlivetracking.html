@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./livetracking.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./livetracking.js"></script>
+    <title>Covid-Api</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+
+  <body>
+    <div class="main-big-box">
+      <div class="left-side-box" id="side_box">
+        <div class="dropdown-bar">
+          <select name="dropdown" class="dropdown" id="dropdown">
+            <option id="firstOp" value="opDefault">
+              -- Select Your Countries --
+            </option>
+          </select>
+        </div>
+        <div class="small-container">
+          <div class="box" id="box1">
+            <div class="graph">
+              <!-- <canvas id="top1_graph" width="200" height="150"></canvas> -->
+            </div>
+          </div>
+          <div class="box" id="box2">
+            <!-- <canvas id="top2_graph" width="200" height="150"></canvas> -->
+          </div>
+          <div class="box" id="box3">
+            <!-- <canvas id="top3_graph" width="200" height="150"></canvas> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="mid-box">
+        <div class="header-text">
+          <div class="virus-icon"></div>
+          COVID-19 TRACKING
+        </div>
+
+        <div class="world-container">
+          <div class="world-info">
+            <p id="world_header">World-wide Tracking</p>
+            <div id="world_textcontainer">
+              <p class="total" id="world_total"></p>
+              <p class="new" id="world_new"></p>
+              <p class="active" id="world_active"></p>
+              <p class="recovered" id="world_recovered"></p>
+              <p class="death" id="world_death"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="big-container">
+          <div class="graph">
+            <canvas id="my_graph" width="470" height="400"></canvas>
+          </div>
+          <div class="information">
+            <p id="name"></p>
+            <p class="total" id="total"></p>
+            <p class="new" id="newCases"></p>
+            <p class="active" id="active"></p>
+            <p class="critical" id="critical"></p>
+            <p class="recovered" id="recovered"></p>
+            <p class="death" id="death"></p>
+          </div>
+        </div>
+      </div>
+      <div class="right-side-box" id="side_box">
+        <div class="time-bar">
+          <p id="time_display"></p>
+        </div>
+
+        <div class="small-container">
+          <div class="box" id="box4">
+            <!-- <canvas id="top4_graph" width="200" height="150"></canvas> -->
+          </div>
+          <div class="box" id="box5">
+            <!-- <canvas id="top5_graph" width="200" height="150"></canvas> -->
+          </div>
+          <div class="box" id="box6">
+            <!-- <canvas id="top6_graph" width="200" height="150"></canvas> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const dropdown = document.querySelector(".dropdown");
+    const worldInfo = document.querySelector(".world-info");
+    const graph = document.querySelector(".graph");
+    const info = document.querySelector(".information");
+    // const box1 = document.querySelector("#box1");
+    // const box2 = document.querySelector("#box2");
+    // const box3 = document.querySelector("#box3");
+    // const box4 = document.querySelector("#box4");
+    // const box5 = document.querySelector("#box5");
+    // const box6 = document.querySelector("#box6");
+
+    displayTime();
+    setInterval(displayTime, 1000);
+    function displayTime() {
+      let d = new Date();
+      let day = d.toDateString();
+      let time = d.toLocaleTimeString();
+      document.getElementById("time_display").innerHTML = time + " " + day;
+    }
+  </script>
+</html>
